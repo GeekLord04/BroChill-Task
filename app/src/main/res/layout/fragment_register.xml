@@ -88,7 +88,7 @@
             android:layout_height="70dp"
             android:layout_marginLeft="113dp"
             android:layout_marginTop="50dp"
-            android:backgroundTint="#353535"
+            android:backgroundTint="#0A1266"
             android:gravity="center"
             android:text="Signup"
             android:textSize="19dp" />
@@ -114,6 +114,7 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="25dp"
                 android:gravity="left"
+                android:backgroundTint="#0A1266"
                 android:text="Log In"
                 android:textSize="17dp"
                 android:textStyle="bold" />

@@ -42,5 +42,9 @@
         android:id="@+id/createTweetFragment"
         android:name="com.geeklord.brochilltask.View.CreateTweetFragment"
         android:label="fragment_create_tweet"
-        tools:layout="@layout/fragment_create_tweet" />
+        tools:layout="@layout/fragment_create_tweet" >
+        <action
+            android:id="@+id/action_createTweetFragment_to_showTweetsFragment"
+            app:destination="@id/showTweetsFragment" />
+    </fragment>
 </navigation>

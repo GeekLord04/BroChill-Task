@@ -10,10 +10,10 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface TweetsAPI {
-    @POST("/tweet")
+    @POST("/tweets")
     suspend fun postTweet(@Body request: PostTweetRequest): Response<PostTweetResponse>
 
-    @GET("/tweet")
+    @GET("/tweets")
     suspend fun getTweets(): Response<List<GetTweetResponse>>
 
     @GET("/welcome")
