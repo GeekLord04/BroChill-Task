@@ -56,7 +56,7 @@ class CreateTweetFragment : Fragment() {
             when(it){
                 is NetworkResult.Success -> {
                     binding.createTweetProgress.visibility = View.GONE
-                    findNavController().navigate(R.id.action_createTweetFragment_to_showTweetsFragment)
+                    findNavController().popBackStack()
                 }
                 is NetworkResult.Error -> {
                     binding.createTweetProgress.visibility = View.GONE

@@ -73,7 +73,7 @@
             android:layout_height="70dp"
             android:layout_marginLeft="113dp"
             android:layout_marginTop="120dp"
-            android:backgroundTint="#353535"
+            android:backgroundTint="#0A1266"
             android:gravity="center"
             android:text="Login"
             android:textSize="19dp" />
@@ -101,6 +101,7 @@
                 android:layout_marginTop="25dp"
                 android:gravity="left"
                 android:text="Register"
+                android:textColor="#0A1266"
                 android:textSize="17dp"
                 android:textStyle="bold" />
         </LinearLayout>

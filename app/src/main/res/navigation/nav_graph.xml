@@ -15,7 +15,7 @@
             app:destination="@id/showTweetsFragment" />
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
+            app:popUpTo="@id/registerFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/showTweetsFragment"
@@ -37,6 +40,10 @@
         <action
             android:id="@+id/action_showTweetsFragment_to_createTweetFragment"
             app:destination="@id/createTweetFragment" />
+        <action
+            android:id="@+id/action_showTweetsFragment_to_registerFragment"
+            app:popUpTo="@id/registerFragment"
+            app:destination="@id/registerFragment" />
     </fragment>
     <fragment
         android:id="@+id/createTweetFragment"
@@ -45,6 +52,15 @@
         tools:layout="@layout/fragment_create_tweet" >
         <action
             android:id="@+id/action_createTweetFragment_to_showTweetsFragment"
+            app:popUpTo="@id/showTweetsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.geeklord.brochilltask.View.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_showTweetsFragment"
             app:destination="@id/showTweetsFragment" />
     </fragment>
 </navigation>

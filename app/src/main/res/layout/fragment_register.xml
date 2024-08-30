@@ -114,7 +114,7 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="25dp"
                 android:gravity="left"
-                android:backgroundTint="#0A1266"
+                android:textColor="#0A1266"
                 android:text="Log In"
                 android:textSize="17dp"
                 android:textStyle="bold" />

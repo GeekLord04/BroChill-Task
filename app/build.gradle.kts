@@ -71,4 +71,7 @@ dependencies {
     val navVersion ="2.6.0" // Use the latest version available
     implementation("androidx.navigation:navigation-fragment:$navVersion")
     implementation("androidx.navigation:navigation-ui:$navVersion")
+
+    //Coil
+    implementation("io.coil-kt:coil:2.6.0")
 }

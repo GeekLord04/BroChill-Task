@@ -41,11 +41,9 @@ class RegisterFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentRegisterBinding.inflate(inflater,container, false)
 
-        //TODO : Check if user already logged in or not
-//        if (tokenManager.getToken() != null){
-//            findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
-//
-//        }
+        if (tokenManager.getToken() != null){
+            findNavController().navigate(R.id.action_registerFragment_to_welcomeFragment)
+        }
         return binding.root
     }
 

@@ -50,7 +50,7 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.createAcc.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+            findNavController().popBackStack()
         }
 
         binding.loginBtn.setOnClickListener {

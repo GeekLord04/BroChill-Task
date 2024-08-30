@@ -7,13 +7,60 @@
     tools:context=".View.ShowTweetsFragment">
 
 
-    <Button
-        android:id="@+id/next"
-        android:layout_width="128dp"
-        android:layout_height="67dp"
-        android:text="Button"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tweet_list"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginRight="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/tweet_item" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addTweet_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:backgroundTint="#AEAEAE"
+        app:rippleColor="@color/white"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_constraintBottom_toBottomOf="@+id/tweet_list"
+        app:layout_constraintEnd_toEndOf="@+id/tweet_list"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="@+id/tweet_list"
+        app:layout_constraintTop_toTopOf="@+id/tweet_list"
+        app:layout_constraintVertical_bias="0.932" />
+
+    <ProgressBar
+        android:id="@+id/show_tweet_progress"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/logout_btn"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="111dp"
+        android:layout_height="49dp"
+        android:backgroundTint="#333A83"
+        android:gravity="center"
+        android:text="Logout"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/tweet_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

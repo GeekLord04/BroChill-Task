@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.geeklord.brochilltask.Model.GetTweetResponse
 import com.geeklord.brochilltask.Model.PostTweetRequest
 import com.geeklord.brochilltask.Model.PostTweetResponse
+import com.geeklord.brochilltask.Model.WelcomeResponse
 import com.geeklord.brochilltask.Repository.TweetRepositoryImpl
 import com.geeklord.brochilltask.Utils.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,6 +21,9 @@ class TweetsViewModel @Inject constructor(private val tweetsRepository: TweetRep
     private val _getTweetsLiveData = MutableLiveData<NetworkResult<List<GetTweetResponse>>>()
     val getTweetsLiveData: LiveData<NetworkResult<List<GetTweetResponse>>> = _getTweetsLiveData
 
+    private val _welcomeLiveData = MutableLiveData<NetworkResult<WelcomeResponse>>()
+    val welcomeLiveData: LiveData<NetworkResult<WelcomeResponse>> = _welcomeLiveData
+
     suspend fun postTweet(tweetRequest: PostTweetRequest) {
         _postTweetLiveData.postValue(NetworkResult.Loading())
         val response = tweetsRepository.postTweet(tweetRequest)
@@ -30,6 +34,12 @@ class TweetsViewModel @Inject constructor(private val tweetsRepository: TweetRep
         _getTweetsLiveData.postValue(NetworkResult.Loading())
         val response = tweetsRepository.getTweets()
         _getTweetsLiveData.postValue(response)
+    }
+
+    suspend fun welcome() {
+        _welcomeLiveData.postValue(NetworkResult.Loading())
+        val response = tweetsRepository.welcome()
+        _welcomeLiveData.postValue(response)
     }
 
 }
