@@ -14,8 +14,8 @@ import com.geeklord.brochilltask.Model.AuthRequest
 import com.geeklord.brochilltask.R
 import com.geeklord.brochilltask.Utils.Constants.TAG
 import com.geeklord.brochilltask.Utils.NetworkResult
+import com.geeklord.brochilltask.Utils.HelperFunctions
 import com.geeklord.brochilltask.Utils.TokenManager
-import com.geeklord.brochilltask.Utils.inputValidationHelper
 import com.geeklord.brochilltask.ViewModel.AuthViewModel
 import com.geeklord.brochilltask.databinding.FragmentRegisterBinding
 import com.google.android.material.snackbar.Snackbar
@@ -52,6 +52,12 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.signupBtn.setOnClickListener {
+
+            if (!HelperFunctions().isInternetAvailable(requireContext())){
+                Toast.makeText(this.context, "No Internet Connection", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             val validationResult = userValidation()
             if (validationResult.first){
                 val userReq = getUserRequest()
@@ -101,7 +107,7 @@ class RegisterFragment : Fragment() {
 
     private fun userValidation(): Pair<Boolean, String> {
         val userRequest = getUserRequest()
-        return inputValidationHelper().userInputValidation( userRequest.firstName, userRequest.lastName, userRequest.email!!, userRequest.password!!, false)
+        return HelperFunctions().registerUserInputValidation( userRequest.firstName, userRequest.lastName, userRequest.email!!, userRequest.password!!, false)
     }
 
     override fun onDestroy() {
